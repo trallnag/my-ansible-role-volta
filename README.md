@@ -1,10 +1,16 @@
-> This role is not meant to be a role that can be shared. It is only used by myself.
-> Also, instead of relying on Ansible Galaxy, I use this role in my playbooks
-> by adding the repo as a Git submodule.
+> This role is not meant to be shared. It is only used by myself.
+> I use this role in my playbooks by adding the repo as a Git submodule.
 
-# Volta
+# Ansible Role `volta`
 
-The Hassle-Free JavaScript Tool Manager.
+Role that installs Volta and a default version of Node.
 
-* <https://github.com/volta-cli/volta>
-* <https://volta.sh/>
+- <https://github.com/volta-cli/volta>
+- <https://volta.sh/>
+
+## FAQ
+
+### How to bump the version of Volta?
+
+Whenever this role is executed, Volta is updated to the latest version
+automatically.

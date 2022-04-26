@@ -21,12 +21,6 @@
       export VOLTA_HOME=$HOME/.volta
       export PATH=$VOLTA_HOME/bin:$PATH
 
-- name: "bash : Create ~/.local/share/bash-completion/completions"
-  ansible.builtin.shell: |
-    mkdir -p ~/.local/share/bash-completion/completions
-  args: {warn: false} 
-  changed_when: false
-
 # See <https://docs.volta.sh/reference/completions>.
 - name: "bash : Create ~/.local/share/bash-completion/completions/volta.bash"
   ansible.builtin.shell: |
@@ -48,13 +42,6 @@
       export VOLTA_HOME=$HOME/.volta
       path=($VOLTA_HOME/bin $path)
 
-- name: "zsh : Create /usr/local/share/zsh/site-functions"
-  ansible.builtin.shell: |
-    mkdir -p /usr/local/share/zsh/site-functions
-  args: {warn: false}
-  changed_when: false
-  become: true
-
 # See <https://docs.volta.sh/reference/completions>.
 - name: "zsh : Create /usr/local/share/zsh/site-functions/_volta"
   ansible.builtin.shell: |
@@ -69,11 +56,11 @@
 
 
 # See <https://docs.volta.sh/guide/understanding>.
-- name: Install and set node@16.12.0 as default
+- name: Install and set node@16.14.2 as default
   ansible.builtin.shell: |
     export VOLTA_HOME=~/.volta
     export PATH=$VOLTA_HOME/bin:$PATH
-    volta install node@16.12.0
+    volta install node@16.14.2
   changed_when: false
 
 
